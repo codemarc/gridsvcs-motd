@@ -1,0 +1,13 @@
+services:
+  cli:
+    image: ghcr.io/codemarc/gridsvcs/motd:latest
+    restart: unless-stopped
+    build:
+      context: .
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./data:/gridsvcs/motd/data
+      - ./logs:/gridsvcs/motd/logs
+    ports:
+      - 3000:3000
+
