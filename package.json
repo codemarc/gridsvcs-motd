@@ -1,7 +1,7 @@
 {
    "name": "motd",
    "description": "Message of the Day service for Gridlinks",
-   "version": "0.0.8",
+   "version": "0.0.9",
    "author": "Marc J. Greenberg <marc.greenberg@codemarc.net> (https://codemarc.net)",
    "repository": {
       "type": "git",
