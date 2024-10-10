@@ -1,13 +1,16 @@
 **/.dockerignore
 **/.git
 **/.gitignore
+**/.github
 **/.vscode
 **/docker-compose*
 **/compose*
 **/Dockerfile*
 **/npm-debug.log
 **/node_modules
-
 README.md
 logs/
 .env
+.env.bin
+.env.local
+.env.local.bin
