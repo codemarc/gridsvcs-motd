@@ -2,14 +2,19 @@
    "name": "motd",
    "description": "Message of the Day service for Gridlinks",
    "version": "0.0.8",
+   "author": "Marc J. Greenberg <marc.greenberg@codemarc.net> (https://codemarc.net)",
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/codemarc/gridsvcs-motd"
+   },
    "main": "src/server.js",
    "type": "module",
    "bin": {
       "motd": "./motd.js"
    },
    "scripts": {
-      "dev": "nodemon --env-file=.env ./motd.js server",
-      "server": "node --no-warnings ./motd.js server",
+      "dev": "nodemon --env-file=.env.local ./motd.js server",
+      "server": "node --env-file=.env --no-warnings ./motd.js server",
       "motd": "node --no-warnings --env-file=.env ./motd.js ",
       "update": "yarn version --patch",
       "build": "npx buildnumgen > build.num",
