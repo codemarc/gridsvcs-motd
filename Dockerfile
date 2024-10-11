@@ -1,5 +1,5 @@
 FROM node:lts-alpine
-LABEL org.opencontainers.image.source=https://github.com/codemarc/gridsvcs-motd
+LABEL org.opencontainers.image.source=https://github.com/codemarc/gridsvcs
 
 RUN apk add --no-cache tzdata
 
