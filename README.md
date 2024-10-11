@@ -1,7 +1,14 @@
 # gridsvcs-motd
+[![GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?logo=github&logoColor=white)][motd]
+[![Build and Push Motd Docker Image](https://github.com/codemarc/gridsvcs-motd/actions/workflows/docker-build-push-motd.yml/badge.svg)](https://github.com/codemarc/gridsvcs-motd/actions/workflows/docker-build-push-motd.yml)
+![GitHub last commit](https://img.shields.io/github/last-commit/codemarc/gridsvcs-motd)  
 message of the day microservice for gridlinks, part of the gridsvcs project
-## microservice considerations
 
+
+<!-- References -->
+[motd]: https://github.com/codemarc/gridsvcs-motd
+
+### microservice considerations
 To be considered as a microservice, some basic NFR's should be met:
 
 1. Single Responsibility -  Each microervice should have a single responsibility.
@@ -10,7 +17,7 @@ To be considered as a microservice, some basic NFR's should be met:
 4. Agnosticism - This service is built with JavaScript (Node.js), but it doesn't imply
 any dependency on the technology stack of other components of the larger system
 
-## Patterns used
+## patterns used
 
 CQRS - Command Query Responsibility Segregation
 
@@ -24,6 +31,13 @@ Commands may create, update, or delete data but typically do not return any data
 
 2. **Queries**: These are operations that retrieve state without changing it. Queries fetch data and return it but do not modify the data or have side effects.
 The principle here is that you can ask a question about the state of the system without changing the system.
+
+## tools reference
+
+* [OpenAI Platform](https://platform.openai.com/), [API keys](https://platform.openai.com/api-keys) (for this service use the project gridlinks and the key named motd)
+
+
+
 
 ## build and run
 
