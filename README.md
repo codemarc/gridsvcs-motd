@@ -2,6 +2,7 @@
 [![GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?logo=github&logoColor=white)][motd]
 [![Build and Push Motd Docker Image](https://github.com/codemarc/gridsvcs-motd/actions/workflows/docker-build-push-motd.yml/badge.svg)](https://github.com/codemarc/gridsvcs-motd/actions/workflows/docker-build-push-motd.yml)
 ![GitHub last commit](https://img.shields.io/github/last-commit/codemarc/gridsvcs-motd)  
+
 message of the day microservice for gridlinks, part of the gridsvcs project
 
 
