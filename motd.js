@@ -4,11 +4,17 @@ import logger from "./src/logger.js"
 import fs from "fs-extra"
 import cqs from "./src/cqs.js"
 import qqs from "./src/qqs.js"
+import env from "./src/env.js"
 import { server } from "./src/server.js"
 import packageJson from "./package.json" assert { type: "json" }
 const { name, version, description } = packageJson
 
 try {
+   try {
+      fs.readJSONSync("build.num")
+   } catch (err) {
+      fs.writeJSONSync("build.num", 0)
+   }
    let build = fs.readJSONSync("build.num")
 
    // =======================================================================
@@ -18,6 +24,13 @@ try {
       .bin(name)
       .version(version)
       .description(description)
+
+      // =====================================================================
+      .command("env", "display environment")
+      .action(async (args, options) => {
+         let ienv = new env(args, options)
+         await ienv.display()
+      })
 
       // =====================================================================
       .command("refresh", "updates all cached data")
@@ -64,7 +77,7 @@ try {
          server()
       })
 
-   logger.info(`running ${name} cli v${version} build ${build}`)
+   logger.info(`running ${name} cli v${version} (${build})`)
    if (process.argv.length < 3) logger.info("no command issued")
 
    prog.parse(process.argv)

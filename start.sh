@@ -1,27 +1,49 @@
-# This script is used to manage different build and development tasks for the project.
-# Usage: ./start.sh [build|dev|server]
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Please note this script has specifically omitted the hash-bang bin/bash or 
+# bin/ash directive with the intent to run in any *ash compatible shell.
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# This script is used to start motd from the container environment. It is
+# intended to be run from the root of the project directory.
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-# Check if the first argument is "build"
-if [ "$1" == "build" ]; then
-  # Run the build process using yarn
-  yarn build
+# set my name and version
+version=$(jq -r '.version' package.json)
+service=$(jq -r '.name' package.json)
+vscript="grid start $service v$version"
+echo
+echo "$vscript"
+echo
 
-# Check if the first argument is "dev"
-elif [ "$1" == "dev" ]; then
-  # If the .env.local file does not exist, generate it using the smash command
-  if [ ! -f ./.env.local ]; then
-    node --no-warnings ./smash -k motd ./.env.local
+# Check for -d flag
+dev_mode=false
+while getopts "d" opt; do
+  case $opt in
+    d)
+      dev_mode=true
+      ;;
+    *)
+      ;;
+  esac
+done
+
+
+if [ "$dev_mode" = true ]; then
+  echo "starting in development mode..."
+  if [ -f .env.development ]; then
+     echo "loading .env.development environment variables..."
+     node --env-file=.env.development ./motd.js $2 $3 $4 $5 $6 $7 $8 $9
+  else
+     echo "using default environment..."
+     NODE_ENV=development node ./motd.js $2 $3 $4 $5 $6 $7 $8 $9
   fi
-  # Start the development server using yarn
-  yarn dev
-
-# If the first argument is neither "build" nor "dev"
 else
-  # If the .env file does not exist, generate it using the smash command
-  if [ ! -f ./.env ]; then
-    node --no-warnings ./smash -k motd ./.env
+  echo "starting in production mode..."
+  if [ -f .env.production ]; then
+     echo "loading .env.production environment variables..."
+     NODE_ENV=production node --no-warnings --env-file=.env.production ./motd.js "$@"
+  else
+     echo "using default environment..."
+     NODE_ENV=production node --no-warnings ./motd.js "$@"
   fi
-  # Start the server using yarn
-  yarn server
-
 fi
+
