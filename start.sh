@@ -14,29 +14,19 @@ echo
 echo "$vscript"
 echo
 
-# Check for -d flag
-dev_mode=false
-while getopts "d" opt; do
+# Check for -prod flag
+prod_mode=false
+while getopts "p" opt; do
   case $opt in
-    d)
-      dev_mode=true
+    p)
+      prod_mode=true
       ;;
     *)
       ;;
   esac
 done
 
-
-if [ "$dev_mode" = true ]; then
-  echo "starting in development mode..."
-  if [ -f .env.development ]; then
-     echo "loading .env.development environment variables..."
-     node --env-file=.env.development ./motd.js $2 $3 $4 $5 $6 $7 $8 $9
-  else
-     echo "using default environment..."
-     NODE_ENV=development node ./motd.js $2 $3 $4 $5 $6 $7 $8 $9
-  fi
-else
+if [ "$prod_mode" = true ]; then
   echo "starting in production mode..."
   if [ -f .env.production ]; then
      echo "loading .env.production environment variables..."
@@ -44,6 +34,15 @@ else
   else
      echo "using default environment..."
      NODE_ENV=production node --no-warnings ./motd.js "$@"
+  fi
+else
+  echo "starting in development mode..."
+  if [ -f .env.development ]; then
+     echo "loading .env.development environment variables..."
+     node --env-file=.env.development ./motd.js "$@"
+  else
+     echo "using default environment..."
+     NODE_ENV=development node ./motd.js "$@"
   fi
 fi
 
