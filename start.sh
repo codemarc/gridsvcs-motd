@@ -30,10 +30,10 @@ if [ "$prod_mode" = true ]; then
   echo "starting in production mode..."
   if [ -f .env.production ]; then
      echo "loading .env.production environment variables..."
-     NODE_ENV=production node --no-warnings --env-file=.env.production ./motd.js "$@"
+     NODE_ENV=production node --no-warnings --env-file=.env.production ./motd.js $2 $3 $4 $5 $6 $7 $8 $9
   else
      echo "using default environment..."
-     NODE_ENV=production node --no-warnings ./motd.js "$@"
+     NODE_ENV=production node --no-warnings ./motd.js $2 $3 $4 $5 $6 $7 $8 $9
   fi
 else
   echo "starting in development mode..."
