@@ -30,7 +30,8 @@ export default class senv {
       this.openaiApiKey = process.env.GS_OPENAI_API_KEY ?? ""
 
       // supabase
-      this.supabaseProjectUrl = process.env.GS_SUPAURL ?? ""
+      this.supabaseProjectId = process.env.GS_SUPAPRJ ?? ""
+      this.supabaseProjectUrl = process.env.GS_SUPAURL ?? `https://${this.supabaseProjectId}.supabase.co`
       this.supabaseAnonKey = process.env.GS_SUPANON ?? ""
       this.supabaseServiceKey = process.env.GS_SUPASVC ?? ""
 
