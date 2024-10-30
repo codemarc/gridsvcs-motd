@@ -17,9 +17,11 @@
       "server": "node --no-warnings --env-file=.env.production ./motd.js server",
       "motd": "node --no-warnings --env-file=.env.production ./motd.js ",
       "docker:dev": "docker compose --env-file=.env.development run cli",
-      "docker": "docker compose --env-file=.env.production run cli",
-      "update": "yarn version --patch",
-      "build": "npx buildnumgen > build.num"
+      "docker:prod": "docker compose --env-file=.env.production run cli",
+      "ver:show": "cat package.json | jq .version",
+      "ver:update": "yarn version --patch",
+      "build:show": "cat build.num && buildnumgen $(cat build.num)",
+      "build:update": "npx buildnumgen > build.num && cat build.num"
    },
    "license": "MIT",
    "dependencies": {

@@ -1,0 +1,712 @@
+[
+  {
+    "id": 2,
+    "topic": "sopranos",
+    "prompt": "by characters from the sopranos",
+    "promptliteral": false,
+    "model": "gpt-4o-mini",
+    "message": null,
+    "usage": null,
+    "modified": "2024-10-20T19:32:50.188128+00:00",
+    "dbu": "postgres"
+  },
+  {
+    "id": 3,
+    "topic": "got",
+    "prompt": "by characters from game of thrones or from house of the dragon",
+    "promptliteral": false,
+    "model": "gpt-4o-mini",
+    "message": null,
+    "usage": null,
+    "modified": "2024-10-20T19:32:50.188128+00:00",
+    "dbu": "postgres"
+  },
+  {
+    "id": 4,
+    "topic": "elon",
+    "prompt": "related to Elon Musk",
+    "promptliteral": false,
+    "model": "gpt-4o",
+    "message": null,
+    "usage": null,
+    "modified": "2024-10-20T19:32:50.188128+00:00",
+    "dbu": "postgres"
+  },
+  {
+    "id": 7,
+    "topic": "politics",
+    "prompt": "related to American Politics from the past month",
+    "promptliteral": false,
+    "model": "gpt-4o",
+    "message": null,
+    "usage": null,
+    "modified": "2024-10-20T19:32:50.188128+00:00",
+    "dbu": "postgres"
+  },
+  {
+    "id": 6,
+    "topic": "kamala",
+    "prompt": "related to Kamala Harris",
+    "promptliteral": false,
+    "model": "gpt-4o-2024-08-06",
+    "message": [
+      {
+        "author": "Inspirational Daily",
+        "message": "Kamala Harris: Inspiring voices on justice and equality."
+      },
+      {
+        "author": "Leadership Quotes",
+        "message": "Leadership is not about a title or a designation. It's about impact, influence, and inspiration. - Kamala Harris"
+      },
+      {
+        "author": "Hopeful America",
+        "message": "Let's keep fighting for the America we believe in. - Kamala Harris"
+      },
+      {
+        "author": "Motivational Moments",
+        "message": "Kamala Harris reminds us to dream with ambition and lead with conviction."
+      },
+      {
+        "author": "Change Makers Daily",
+        "message": "Change is possible with courage and determination. - Kamala Harris"
+      },
+      {
+        "author": "Justice and Unity",
+        "message": "Kamala Harris champions the rights of all Americans with resilience."
+      },
+      {
+        "author": "Voting Matters",
+        "message": "Every vote matters. Speak your truth. - Kamala Harris"
+      },
+      {
+        "author": "Diversity Daily",
+        "message": "Kamala Harris encourages us to see diversity as our strength."
+      },
+      {
+        "author": "Focus and Determination",
+        "message": "Rise above the noise and focus on your goals. - Kamala Harris"
+      },
+      {
+        "author": "Success Stories",
+        "message": "Determination and hard work pave the way for success. - Kamala Harris"
+      },
+      {
+        "author": "Perseverance Power",
+        "message": "Kamala Harris shows us that perseverance leads to breakthroughs."
+      },
+      {
+        "author": "Empowerment Corner",
+        "message": "Let's work together to uplift and empower each other. - Kamala Harris"
+      },
+      {
+        "author": "Leadership in Action",
+        "message": "True leadership comes from consistent, deliberate, and meaningful action. - Kamala Harris"
+      },
+      {
+        "author": "Grace and Strength",
+        "message": "Kamala Harris exemplifies grace under pressure."
+      },
+      {
+        "author": "Equality Advocate",
+        "message": "Equality requires continuous effort and deliberate action. - Kamala Harris"
+      },
+      {
+        "author": "Breaking Barriers",
+        "message": "Kamala Harris proves that barriers are made to be broken."
+      },
+      {
+        "author": "Hope and Change",
+        "message": "Hold on to hope; it's a powerful force for change. - Kamala Harris"
+      },
+      {
+        "author": "Empathy in Action",
+        "message": "Kamala Harris encourages us to engage with empathy and respect."
+      },
+      {
+        "author": "World Peace Daily",
+        "message": "Let's continue to strive for a world of justice and peace. - Kamala Harris"
+      },
+      {
+        "author": "Resilience Pride",
+        "message": "Kamala Harris teaches us the value of resilience and determination."
+      },
+      {
+        "author": "Justice Path",
+        "message": "The path forward is paved with dignity and justice. - Kamala Harris"
+      },
+      {
+        "author": "Youth Empowerment",
+        "message": "Kamala Harris believes in the power of young leaders."
+      },
+      {
+        "author": "Courageous Living",
+        "message": "Courage starts with showing up and letting ourselves be seen. - Kamala Harris"
+      },
+      {
+        "author": "Inclusive Future",
+        "message": "Kamala Harris advocates for a brighter, more inclusive future."
+      },
+      {
+        "author": "Tomorrow's Vision",
+        "message": "A better tomorrow depends on our actions today. - Kamala Harris"
+      },
+      {
+        "author": "Integrity and Purpose",
+        "message": "Kamala Harris inspires us to lead with integrity and purpose."
+      },
+      {
+        "author": "Passion Pursuit",
+        "message": "Pursue your passions with unwavering conviction. - Kamala Harris"
+      },
+      {
+        "author": "Unity and Cooperation",
+        "message": "Kamala Harris highlights the importance of unity and cooperation."
+      },
+      {
+        "author": "Self-Definition Daily",
+        "message": "Don't let anyone tell you who you are. Define yourself. - Kamala Harris"
+      },
+      {
+        "author": "Strength and Adversity",
+        "message": "Kamala Harris motivates us to push through adversity with strength."
+      },
+      {
+        "author": "Voice of Progress",
+        "message": "Progress is made by those who stand up and speak out. - Kamala Harris"
+      },
+      {
+        "author": "Bridges to Unity",
+        "message": "Kamala Harris supports building bridges and not walls."
+      },
+      {
+        "author": "Bold Steps Forward",
+        "message": "Trust in your potential and take bold steps forward. - Kamala Harris"
+      },
+      {
+        "author": "Justice Warriors",
+        "message": "Kamala Harris believes in fighting for justice with all her might."
+      },
+      {
+        "author": "Path to Progress",
+        "message": "The road to progress is long, but every step counts. - Kamala Harris"
+      },
+      {
+        "author": "Persistent Success",
+        "message": "Kamala Harris shows us that persistence breeds success."
+      },
+      {
+        "author": "Change Makers United",
+        "message": "Work together to create change that matters. - Kamala Harris"
+      },
+      {
+        "author": "Unity and Resilience",
+        "message": "Kamala Harris reminds us of the power of unity and resilience."
+      },
+      {
+        "author": "Acheivement Power",
+        "message": "Confidence and hard work lead to remarkable achievements. - Kamala Harris"
+      },
+      {
+        "author": "Equality Fighters",
+        "message": "Kamala Harris embodies the fight for equality and justice."
+      },
+      {
+        "author": "Courage and Heart",
+        "message": "Courage is born from the heart of those unafraid to stand. - Kamala Harris"
+      },
+      {
+        "author": "Dream and Act",
+        "message": "Kamala Harris inspires us to dream big and act with intent."
+      },
+      {
+        "author": "Stand Tall Daily",
+        "message": "Stand tall with integrity and purpose. - Kamala Harris"
+      },
+      {
+        "author": "Spirit of Change",
+        "message": "Kamala Harris reflects the spirit of progress and change."
+      },
+      {
+        "author": "Meaningful Dialogue",
+        "message": "Engage in meaningful dialogue and build bridges of understanding. - Kamala Harris"
+      },
+      {
+        "author": "Civic Engagement Advocate",
+        "message": "Kamala Harris emphasizes the importance of civic engagement."
+      },
+      {
+        "author": "Pathways to Success",
+        "message": "Pride, passion, and persistence create pathways to success. - Kamala Harris"
+      },
+      {
+        "author": "Justice for All",
+        "message": "Kamala Harris believes in equality and justice for all."
+      }
+    ],
+    "usage": {
+      "total_tokens": 1701,
+      "prompt_tokens": 42,
+      "completion_tokens": 1659,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "modified": "2024-10-20T19:32:50.188128+00:00",
+    "dbu": "postgres"
+  },
+  {
+    "id": 5,
+    "topic": "trump",
+    "prompt": "related to Donald Trump",
+    "promptliteral": false,
+    "model": "gpt-4o-2024-08-06",
+    "message": [
+      {
+        "author": "Anonymous",
+        "message": "Leadership is steering a ship through turbulent waters."
+      },
+      {
+        "author": "Anonymous",
+        "message": "Bold decisions shape the course of history."
+      },
+      {
+        "author": "Anonymous",
+        "message": "Confidence can move mountains."
+      },
+      {
+        "author": "Anonymous",
+        "message": "Success is determined by the strength of one's resolve."
+      },
+      {
+        "author": "Anonymous",
+        "message": "In the face of adversity, resilience is key."
+      },
+      {
+        "author": "Anonymous",
+        "message": "Visionary leaders turn challenges into opportunities."
+      },
+      {
+        "author": "Anonymous",
+        "message": "The power of communication lies in its clarity and conviction."
+      },
+      {
+        "author": "Anonymous",
+        "message": "Achievements speak louder than words."
+      },
+      {
+        "author": "Anonymous",
+        "message": "Innovation requires daring to be different."
+      },
+      {
+        "author": "Anonymous",
+        "message": "Great leaders inspire through action."
+      },
+      {
+        "author": "Anonymous",
+        "message": "The path to greatness is paved with determination."
+      },
+      {
+        "author": "Anonymous",
+        "message": "Success often follows those who dare to lead."
+      },
+      {
+        "author": "Anonymous",
+        "message": "Challenges are the stepping stones to success."
+      },
+      {
+        "author": "Anonymous",
+        "message": "Effective leadership builds lasting legacies."
+      },
+      {
+        "author": "Anonymous",
+        "message": "Perseverance is the hallmark of great leaders."
+      },
+      {
+        "author": "Anonymous",
+        "message": "A strong vision propels progress."
+      },
+      {
+        "author": "Anonymous",
+        "message": "Confidence can be more powerful than wealth."
+      },
+      {
+        "author": "Anonymous",
+        "message": "History remembers those who dare to make a difference."
+      },
+      {
+        "author": "Anonymous",
+        "message": "Leadership is not about power but about service."
+      },
+      {
+        "author": "Anonymous",
+        "message": "Great leaders thrive in adversity."
+      },
+      {
+        "author": "Anonymous",
+        "message": "Success is built on a foundation of action and courage."
+      },
+      {
+        "author": "Anonymous",
+        "message": "True influence comes from authenticity and passion."
+      },
+      {
+        "author": "Anonymous",
+        "message": "Vision turns the invisible into the visible."
+      },
+      {
+        "author": "Anonymous",
+        "message": "Effective leaders inspire those around them to excel."
+      },
+      {
+        "author": "Anonymous",
+        "message": "Bold strategies often lead to ground-breaking results."
+      },
+      {
+        "author": "Anonymous",
+        "message": "The greatest success stories are penned with perseverance."
+      },
+      {
+        "author": "Anonymous",
+        "message": "Adaptability is the hallmark of a true leader."
+      },
+      {
+        "author": "Anonymous",
+        "message": "Courageous leaders turn dreams into reality."
+      },
+      {
+        "author": "Anonymous",
+        "message": "Influence is a result of persistent effort and vision."
+      },
+      {
+        "author": "Anonymous",
+        "message": "The strength of character defines true leaders."
+      },
+      {
+        "author": "Anonymous",
+        "message": "Visionary leaders foresee opportunities where others see obstacles."
+      },
+      {
+        "author": "Anonymous",
+        "message": "Success is the outcome of strategic leadership and unwavering will."
+      },
+      {
+        "author": "Anonymous",
+        "message": "The world is shaped by leaders who dare to innovate."
+      },
+      {
+        "author": "Anonymous",
+        "message": "Leadership entails guiding others through uncertain times."
+      },
+      {
+        "author": "Anonymous",
+        "message": "Effective leaders transform challenges into defining moments."
+      },
+      {
+        "author": "Anonymous",
+        "message": "Resilient leaders build better tomorrows."
+      },
+      {
+        "author": "Anonymous",
+        "message": "An unwavering vision is the mark of great leadership."
+      },
+      {
+        "author": "Anonymous",
+        "message": "The courage to lead is the seed of extraordinary success."
+      },
+      {
+        "author": "Anonymous",
+        "message": "The legacy of leaders is built on the achievements they inspire."
+      },
+      {
+        "author": "Anonymous",
+        "message": "In uncertain times, decisive leadership is essential."
+      },
+      {
+        "author": "Anonymous",
+        "message": "Innovative leaders are architects of their own success."
+      },
+      {
+        "author": "Anonymous",
+        "message": "Courage and leadership walk hand in hand."
+      },
+      {
+        "author": "Anonymous",
+        "message": "Great leaders illuminate the path to progress."
+      },
+      {
+        "author": "Anonymous",
+        "message": "Success is a journey carved by those who inspire others."
+      },
+      {
+        "author": "Anonymous",
+        "message": "Leadership transforms potential into reality."
+      },
+      {
+        "author": "Anonymous",
+        "message": "A leader's legacy is measured by the lives they touch."
+      },
+      {
+        "author": "Anonymous",
+        "message": "Effective leadership inspires enduring impact."
+      },
+      {
+        "author": "Anonymous",
+        "message": "The heartbeat of leadership is vision and integrity."
+      },
+      {
+        "author": "Anonymous",
+        "message": "Success is the fruit of strategic thinking and leadership."
+      },
+      {
+        "author": "Anonymous",
+        "message": "A true leader navigates through the storms with tenacity."
+      }
+    ],
+    "usage": {
+      "total_tokens": 1145,
+      "prompt_tokens": 41,
+      "completion_tokens": 1104,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "modified": "2024-10-20T19:32:50.188128+00:00",
+    "dbu": "postgres"
+  },
+  {
+    "id": 1,
+    "topic": "general",
+    "prompt": "create a list of 50 \"message of the day\" quotes formatted as an array of json objects containing the fields message and author",
+    "promptliteral": true,
+    "model": "gpt-4o-2024-08-06",
+    "message": [
+      {
+        "author": "Steve Jobs",
+        "message": "The only way to do great work is to love what you do."
+      },
+      {
+        "author": "Sam Levenson",
+        "message": "Do not watch the clock. Do what it does. Keep going."
+      },
+      {
+        "author": "Henry David Thoreau",
+        "message": "Success usually comes to those who are too busy to be looking for it."
+      },
+      {
+        "author": "Chris Grosser",
+        "message": "Opportunities don't happen. You create them."
+      },
+      {
+        "author": "John D. Rockefeller",
+        "message": "Don't be afraid to give up the good to go for the great."
+      },
+      {
+        "author": "Thomas Jefferson",
+        "message": "I find that the harder I work, the more luck I seem to have."
+      },
+      {
+        "author": "Bo Bennett",
+        "message": "Success is not in what you have, but who you are."
+      },
+      {
+        "author": "Jawaharlal Nehru",
+        "message": "Success often comes to those who dare to act."
+      },
+      {
+        "author": "Steve Jobs",
+        "message": "Your time is limited, so don't waste it living someone else's life."
+      },
+      {
+        "author": "Unknown",
+        "message": "Success is not just making money. It's making a difference."
+      },
+      {
+        "author": "Frank Sinatra",
+        "message": "The best revenge is massive success."
+      },
+      {
+        "author": "W.P. Kinsella",
+        "message": "Success is getting what you want. Happiness is wanting what you get."
+      },
+      {
+        "author": "Walt Disney",
+        "message": "The way to get started is to quit talking and begin doing."
+      },
+      {
+        "author": "Amit Abraham",
+        "message": "Innovate, don't imitate."
+      },
+      {
+        "author": "Theodore Roosevelt",
+        "message": "Believe you can and you're halfway there."
+      },
+      {
+        "author": "Conrad Hilton",
+        "message": "Success seems to be connected with action. Successful people keep moving."
+      },
+      {
+        "author": "John D. Rockefeller Jr.",
+        "message": "The secret of success is to do the common thing uncommonly well."
+      },
+      {
+        "author": "Dalai Lama",
+        "message": "The purpose of our lives is to be happy."
+      },
+      {
+        "author": "Albert Schweitzer",
+        "message": "Success is not the key to happiness. Happiness is the key to success."
+      },
+      {
+        "author": "William James",
+        "message": "It is our attitude at the beginning of a difficult task which, more than anything else, will affect its successful outcome."
+      },
+      {
+        "author": "Winston Churchill",
+        "message": "Success is walking from failure to failure with no loss of enthusiasm."
+      },
+      {
+        "author": "Johann Wolfgang von Goethe",
+        "message": "Knowing is not enough; we must apply. Wishing is not enough; we must do."
+      },
+      {
+        "author": "Will Rogers",
+        "message": "Don't let yesterday take up too much of today."
+      },
+      {
+        "author": "Ayn Rand",
+        "message": "The question isn't who is going to let me; it's who is going to stop me."
+      },
+      {
+        "author": "John Lennon",
+        "message": "Life is what happens when you're busy making other plans."
+      },
+      {
+        "author": "George S. Patton",
+        "message": "Success is how high you bounce when you hit bottom."
+      },
+      {
+        "author": "Franklin D. Roosevelt",
+        "message": "The only limit to our realization of tomorrow will be our doubts of today."
+      },
+      {
+        "author": "Shiv Khera",
+        "message": "Your positive action combined with positive thinking results in success."
+      },
+      {
+        "author": "William James",
+        "message": "Act as if what you do makes a difference. It does."
+      },
+      {
+        "author": "Michelle Obama",
+        "message": "Success is not how much money you have, but how much difference you make."
+      },
+      {
+        "author": "Wayne Gretzky",
+        "message": "You miss 100% of the shots you don't take."
+      },
+      {
+        "author": "Abraham Lincoln",
+        "message": "Be sure you put your feet in the right place, then stand firm."
+      },
+      {
+        "author": "William James",
+        "message": "Be not afraid of life. Believe that life is worth living, and your belief will help create the fact."
+      },
+      {
+        "author": "C.S. Lewis",
+        "message": "Hardships often prepare ordinary people for an extraordinary destiny."
+      },
+      {
+        "author": "Vince Lombardi",
+        "message": "The difference between a successful person and others is not a lack of strength, not a lack of knowledge, but rather a lack in will."
+      },
+      {
+        "author": "Peter Drucker",
+        "message": "The best way to predict the future is to create it."
+      },
+      {
+        "author": "Jordan Belfort",
+        "message": "The only thing standing between you and your goal is the story you keep telling yourself as to why you can't achieve it."
+      },
+      {
+        "author": "Theodore Roosevelt",
+        "message": "Do what you can, with what you have, where you are."
+      },
+      {
+        "author": "Amelia Earhart",
+        "message": "The most difficult thing is the decision to act, the rest is merely tenacity."
+      },
+      {
+        "author": "Walt Whitman",
+        "message": "Keep your face always toward the sunshine—and shadows will fall behind you."
+      },
+      {
+        "author": "Zig Ziglar",
+        "message": "What you get by achieving your goals is not as important as what you become by achieving your goals."
+      },
+      {
+        "author": "Pablo Picasso",
+        "message": "Action is the foundational key to all success."
+      },
+      {
+        "author": "Vidal Sassoon",
+        "message": "The only place where success comes before work is in the dictionary."
+      },
+      {
+        "author": "Nelson Mandela",
+        "message": "The greatest glory in living lies not in never falling, but in rising every time we fall."
+      },
+      {
+        "author": "Sam Levenson",
+        "message": "Don’t watch the clock; do what it does. Keep going."
+      },
+      {
+        "author": "Muhammad Ali",
+        "message": "Don't count the days, make the days count."
+      },
+      {
+        "author": "Steve Jobs",
+        "message": "If you look really closely, most overnight successes took a long time."
+      },
+      {
+        "author": "Roy T. Bennett",
+        "message": "Don't be pushed around by the fears in your mind. Be led by the dreams in your heart."
+      },
+      {
+        "author": "Oscar Wilde",
+        "message": "Be yourself; everyone else is already taken."
+      },
+      {
+        "author": "Farrah Gray",
+        "message": "Build your own dreams, or someone else will hire you to build theirs."
+      },
+      {
+        "author": "George Addair",
+        "message": "Everything you've ever wanted is on the other side of fear."
+      },
+      {
+        "author": "Aisha Tyler",
+        "message": "Success is not the absence of failure; it's the persistence through failure."
+      }
+    ],
+    "usage": {
+      "total_tokens": 1512,
+      "prompt_tokens": 33,
+      "completion_tokens": 1479,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "modified": "2024-10-20T19:32:50.188128+00:00",
+    "dbu": "postgres"
+  }
+]

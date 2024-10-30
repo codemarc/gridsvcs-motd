@@ -39,55 +39,55 @@ The principle here is that you can ask a question about the state of the system 
 
 ## build and run
 
-You can build and run the service with the following commands:
+You can inspect, build and run the service with the following commands:
 
 #### install dependencies
-```
+```bash
 $ yarn install
-yarn install v1.22.22
-[1/4] 🔍  Resolving packages...
-[2/4] 🚚  Fetching packages...
-[3/4] 🔗  Linking dependencies...
-[4/4] 🔨  Building fresh packages...
-✨  Done in 4.12s.
 ```
 
-#### update build and version identifiers
-The update command updates the version number in the `package.json` file.
-This build command updates the build number in the `build.num` file.
-The build number is used to identify the version of the service.
-It can be easily translated to a human readable date and time.
+#### ver:show
+```bash
+$ yarn ver:show
+cat package.json | jq .version
+"0.0.10"
 ```
-$ yarn update
+
+#### ver:update
+```bash
+$ yarn ver:update
 yarn version --patch
-info Current version: 0.0.9
-info New version: 0.0.10
-✨  Done in 0.66s.
-
-$ yarn build
-yarn run v1.22.22
-$ npx buildnumgen > build.num
-✨  Done in 1.26s.
-
-$ cat build.num 
-241019209
-
-$ npx buildnumgen $(cat build.num) 
-Sat Oct 19 2024 06:58
+info Current version: "0.0.10"
+info New version: "0.0.11"
 ```
 
-#### start script 
-The start script is a wrapper to run ./motd.js (the service). It sets the environment and invokes node passing thru any arguments
+#### build:show
+```bash
+$ yarn build:show
+cat build.num && buildnumgen $(cat build.num)
+241030292
+Wed Oct 30 2024 09:44
+```
 
+#### build:update
+```bash
+$ yarn build:update
+npx buildnumgen > build.num && cat build.num
+```
+
+### start script 
+The start script is a wrapper to run ./motd.js (the service). It sets the environment and invokes node passing thru any arguments, if any. By default it runs in development mode.
 ```bash
 $ ./start
 
 grid start motd v0.0.10
 
-starting in production mode...
+starting in development mode...
 using default environment...
-sat 2024-10-19 07:11:01 am [info]: running motd cli v0.0.10 (241019209)
-sat 2024-10-19 07:11:01 am [info]: no command issued
+(node:50085) ExperimentalWarning: Importing JSON modules is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+wed 2024-10-30 10:39:56 am [info]: running motd cli v0.0.10 (241030314)
+wed 2024-10-30 10:39:56 am [info]: no command issued
 
    motd 0.0.10 - Message of the Day service for Gridlinks
 
@@ -101,14 +101,116 @@ sat 2024-10-19 07:11:01 am [info]: no command issued
      refresh [topic]      updates all cached data            
      server               start the service                  
      help <command>       Display help for a specific command
+```
+To run in production mode use the -p flag.
+```bash
+$ ./start -p
 
-   GLOBAL OPTIONS
+grid start motd v0.0.10
 
-     -h, --help         Display help                                      
-     -V, --version      Display version                                   
-     --no-color         Disable colors                                    
-     --quiet            Quiet mode - only displays warn and error messages
-     -v, --verbose      Verbose mode - will also output debug messages    
+starting in production mode...
+loading .env.production environment variables...
+wed 2024-10-30 10:44:20 am [info]: running motd cli v0.0.10 (241030314)
+wed 2024-10-30 10:44:20 am [info]: no command issued
+
+   motd 0.0.10 - Message of the Day service for Gridlinks
+
+   USAGE
+
+     motd <command> [options]
+
+   COMMANDS
+
+     env                  display environment                
+     refresh [topic]      updates all cached data            
+     server               start the service                  
+     help <command>       Display help for a specific command
 ```
 
+#### lets try the env command in development mode
+There is an expectation that your environment variables are set.
+The file .env.sample contains the environment variables that are used by the service.
+```bash
+# .env.sample
+
+#server config
+GS_DATA=data
+GS_LOGS=logs
+GS_PORT=3000
+
+# App config
+GS_TOPICS_CACHE_TTL=7200
+GS_QUOTES_CACHE_TTL=86400
+GS_QUOTES_MAX_DAYS=30
+
+# supabase project <supabase project name>
+# https://supabase.com/dashboard/project/<projectid>
+# GS_SUPAURL ovverides GS_SUPAPRJ if both are set
+GS_SUPAPRJ=<projectid>
+GS_SUPAURL=https://<projectid>.supabase.co
+GA_SUPANON=<supabase anon token>
+GS_SUPASVC=<supabase service token>
+
+# OpenAI Api Key
+# https://platform.openai.com/api-keys#xxxx
+GS_OPENAI_API_KEY=<motd openai api-key>
+```
+
+The start script will load the environment variables from the .env.development or the 
+.env.production file depending on mode. If not file is available it will use the default environment. Running the env command will display the environment variables. .env.development is used by defined in the illustration below
+
+```log
+$ ./start env
+grid start motd v0.0.10
+
+
+starting in development mode...
+loading .env.development environment variables...
+(node:51861) ExperimentalWarning: Importing JSON modules is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+wed 2024-10-30 10:59:24 am [info]: running motd cli v0.0.10 (241030314)
+wed 2024-10-30 10:59:24 am [info]: =============================================================================
+wed 2024-10-30 10:59:24 am [info]: NODE_ENV....................[development]
+wed 2024-10-30 10:59:24 am [info]: GS_DATA.....................[data]
+wed 2024-10-30 10:59:24 am [info]: GS_LOGS.....................[logs]
+wed 2024-10-30 10:59:24 am [info]: GS_PORT.....................[3000]
+wed 2024-10-30 10:59:24 am [info]: GS_OPENAI_API_KEY...........[sk-p••••••••••••••••••••••••••••••••NfAA]
+wed 2024-10-30 10:59:24 am [info]: GS_OPENAI_MODEL.............[gpt-3.5-turbo]
+wed 2024-10-30 10:59:24 am [info]: GS_SUPAURL..................[https://bcxmxwbowkwaajudjerb.supabase.co]
+wed 2024-10-30 10:59:24 am [info]: GA_SUPANON..................[eyJh••••••••••••••••••••••••••••••••NYQs]
+wed 2024-10-30 10:59:24 am [info]: GA_SUPSVC...................[eyJh••••••••••••••••••••••••••••••••P4XU]
+wed 2024-10-30 10:59:24 am [info]: GS_TOPICS_CACHE_TTL.........[7200]
+wed 2024-10-30 10:59:24 am [info]: GS_QUOTES_CACHE_TTL.........[86400]
+wed 2024-10-30 10:59:24 am [info]: GS_QUOTES_MAX_DAYS..........[30]
+wed 2024-10-30 10:59:24 am [info]: =============================================================================
+wed 2024-10-30 10:59:24 am [info]: data directory resolves to /Users/marc/cmc/grid/gridsvcs-motd/data
+```
+
+#### try the refresh command
+```bash
+$ ./start refresh -h
+
+ motd 0.0.10 - Message of the Day service for Gridlinks
+
+   USAGE
+
+     motd refresh [topic]
+
+   ARGUMENTS
+
+     [topic]      topic to refresh      optional      
+
+   OPTIONS
+
+     -l, --list          topics                    optional      default: false
+     -t, --topics        refresh topics list       optional      default: false
+     -f, --force         force a cache update      optional      default: false
+     -d, --database      use database              optional      default: false
+```
+
+Based on the help output we can see that the refresh command has a few options. The -l option will list the topics in the cache. The -t option will refresh the topics list. The -f option will force a cache update. The -d option will use the database to refresh the cache. 
+
+What about no options?
+
+if no options are specified the refresh command will refresh the topics list (if neccessary) and the general quotes cache.
 

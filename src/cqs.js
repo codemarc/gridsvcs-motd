@@ -51,7 +51,11 @@ export default class cqs {
             const model = json.model
             const usage = json.usage
             let messages = '' + json.choices[0].message.content
-            const qlist = '[' + messages.split('[')[1].split(']')[0] + ']'
+
+            // TODO: this is a hack to get around the fact that the openai api returns a string that is not valid json. 
+            // This is were we should implement a answer parser factory and implement the ability to configure parsers.
+
+            const qlist = messages.split("```json")[1].split(']')[0] + ']'
             const quotes = JSON.parse(qlist)
             const { error } = await supabase.from('topics').update({ model: model, usage: usage, message: quotes }).eq('id', json.cid)
             if (error) throw error
