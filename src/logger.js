@@ -1,9 +1,10 @@
-import winston from "winston";
-import { format as formatDate } from "date-fns";
-import path from "path";
-import DailyRotateFile from "winston-daily-rotate-file";
+import { format as formatDate } from "date-fns"
+import path from "path"
+import winston from "winston"
+import DailyRotateFile from "winston-daily-rotate-file"
+import senv from "./senv.js"
+const env = new senv()
 
-const logDirectory = process.env.GS_LOGS ?? "logs"
 const logger = winston.createLogger({
    level: "info",
    format: winston.format.combine(
@@ -18,7 +19,7 @@ const logger = winston.createLogger({
    transports: [
       new winston.transports.Console(),
       new DailyRotateFile({
-         filename: path.join(logDirectory, "motd-%DATE%.log"),
+         filename: path.join(env.logs, "motd-%DATE%.log"),
          datePattern: "YYYY-MM-DD",
          zippedArchive: true,
          maxSize: "20m",

@@ -1,7 +1,7 @@
 FROM node:lts-alpine
-LABEL org.opencontainers.image.source=https://github.com/codemarc/gridsvcs
+LABEL org.opencontainers.image.source=https://github.com/codemarc/gridsvcs-motd
 
-RUN apk add --no-cache tzdata
+RUN apk add --no-cache tzdata jq
 
 WORKDIR /gridsvcs/motd
 COPY ./ .

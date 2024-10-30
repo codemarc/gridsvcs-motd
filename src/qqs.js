@@ -3,30 +3,16 @@ import fs from "fs-extra"
 import logger from "./logger.js";
 import path from "path"
 
-import packageJson from "../package.json" assert { type: "json" }
-const { version } = packageJson
-
-const DATA_DIR = path.join(process.cwd(), process.env.GS_DATA ?? "data")
-
 // Query Service
 export default class qqs {
-   constructor() {
-      this.init()
-   }
-
-   async init() {
-      try {
-         logger.info(`data directory set to ${DATA_DIR}`)
-         await fs.ensureDir(DATA_DIR)
-      } catch (error) {
-         logger.error(error.toString())
-      }
+   constructor(env) {
+      this.env = env
    }
 
    async getTopics(cache) {
       const getTopicsFromSupabase = async () => {
          try {
-            const supabase = createClient(process.env.GS_SUPAURL ?? "", process.env.GS_SUPAPUBLIC ?? "")
+            const supabase = createClient(this.env.supabaseProjectUrl, this.env.supabaseServiceKey) 
             const { data, error } = await supabase.from('topics').select('*')
             if (error) {
                throw error
@@ -41,7 +27,7 @@ export default class qqs {
       }
 
       try {
-         const cacheFileName = path.join(DATA_DIR, 'topics.json')
+         const cacheFileName = path.join(this.env.dataDir, 'topics.json')
 
          // Step 1: Check if cache parameter is set to false
          if (cache.toString() === 'false') {
@@ -75,7 +61,7 @@ export default class qqs {
          const ageInSeconds = Math.floor(ageInMilliseconds / 1000)
 
          // Default TTL is 2 hours (7200 seconds)
-         const ttl = parseInt(process.env.GS_TOPICS_CACHE_TTL ?? '7200', 10)
+         const ttl = parseInt(this.env.cacheTopicsTTL, 10)
 
          if (ageInSeconds > ttl) {
             logger.info(`topics cache is older than TTL, fetching topics from Supabase`)
@@ -105,7 +91,7 @@ export default class qqs {
 
    async getQuotes(topic = "general") {
       try {
-         const data = await fs.readJSONSync(DATA_DIR + `/${topic}.data.json`)
+         const data = await fs.readJSONSync(this.ienv.dataDir + `/${topic}.data.json`)
          if (data.length == 0) {
             return { status: 404, data: "No quotes found" }
          } else {
@@ -122,12 +108,12 @@ export default class qqs {
 
    async getStatus() {
       try {
-         const supabase = createClient(process.env.GS_SUPAURL ?? "", process.env.GS_SUPAPUBLIC ?? "")
+         const supabase = createClient(this.env.supabaseProjectUrl, this.env.supabaseAnonKey)
          const { data, error } = await supabase.from('topics').select('topic,model,usage')
 
          let rc = {
-            version: version,
-            build: "" + fs.readJSONSync("build.num"),
+            version: this.env.version,
+            build: "" + this.env.build,
             topics: data ?? error
          }
          return { status: 200, data: rc }

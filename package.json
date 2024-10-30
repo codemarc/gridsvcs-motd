@@ -13,12 +13,13 @@
       "motd": "./motd.js"
    },
    "scripts": {
-      "dev": "nodemon --env-file=.env.local ./motd.js server",
-      "server": "node --env-file=.env --no-warnings ./motd.js server",
-      "motd": "node --no-warnings --env-file=.env ./motd.js ",
+      "dev": "node --watch --env-file=.env.development ./motd.js server",
+      "server": "node --no-warnings --env-file=.env.production ./motd.js server",
+      "motd": "node --no-warnings --env-file=.env.production ./motd.js ",
+      "docker:dev": "docker compose --env-file=.env.development run cli",
+      "docker": "docker compose --env-file=.env.production run cli",
       "update": "yarn version --patch",
-      "build": "npx buildnumgen > build.num",
-      "docker": "docker compose --env-file=.env run cli"
+      "build": "npx buildnumgen > build.num"
    },
    "license": "MIT",
    "dependencies": {
@@ -40,7 +41,6 @@
       "winston-daily-rotate-file": "^5.0.0"
    },
    "devDependencies": {
-      "@codemarc/smashdata": "^1.0.2",
-      "nodemon": "^3.1.4"
+      "@codemarc/smashdata": "^1.0.2"
    }
 }

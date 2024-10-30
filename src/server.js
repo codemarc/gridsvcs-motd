@@ -1,11 +1,10 @@
 #!/usr/bin/env node --no-warnings
-import express from "express"
 import bodyParser from "body-parser"
 import cors from "cors"
+import express from "express"
 import helmet from "helmet"
-import fs from "fs-extra"
-import qqs from "./qqs.js"
 import logger from "./logger.js"
+import qqs from "./qqs.js"
 import swaggerSetup from "./swagger.js"
 
 const HTMLSTART = (title, body) => {
@@ -24,9 +23,8 @@ const HTMLSTART = (title, body) => {
 }
 
 
-export function server() {
+export async function server(env) {
    const app = express()
-   const PORT = process.env.GS_PORT ?? 3000
 
    // express middleware
    app.use(bodyParser.json())
@@ -34,7 +32,7 @@ export function server() {
    app.use(helmet())
 
    // Instantiate the query service
-   const qq = new qqs()
+   const qq = new qqs(env)
 
    // Status and Metrics
    /**
@@ -352,13 +350,15 @@ export function server() {
 
    swaggerSetup(app)
 
+   await env.display()
+
    // Start the server
-   app.listen(PORT, () => {
-      logger.info(`server is running on http://localhost:${PORT}`)
-      logger.info(`try http://localhost:${PORT}/v1/motd/api-docs`)
-      logger.info(`try http://localhost:${PORT}/v1/motd/status`)
-      logger.info(`try http://localhost:${PORT}/v1/motd/quotes`)
-      logger.info(`try http://localhost:${PORT}/v1/motd/topics`)
+   app.listen(env.port, () => {
+      logger.info(`server is running on http://localhost:${env.port}`)
+      logger.info(`try http://localhost:${env.port}/v1/motd/api-docs`)
+      logger.info(`try http://localhost:${env.port}/v1/motd/status`)
+      logger.info(`try http://localhost:${env.port}/v1/motd/quotes`)
+      logger.info(`try http://localhost:${env.port}/v1/motd/topics`)
       logger.info(`press CTRL+C to stop`)
    })
 }

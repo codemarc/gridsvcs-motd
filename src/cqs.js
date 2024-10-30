@@ -1,22 +1,19 @@
 import OpenAI from "openai"
 import fs from "fs-extra"
-import path from "path"
 import logger from "./logger.js"
 import { createClient } from "@supabase/supabase-js"
 import _ from "lodash"
 
-const DATA_DIR = path.join(process.cwd(), process.env.GS_DATA ?? "data")
-const TOPICS_FILE = DATA_DIR + "/topics.json"
-const supabaseUrl = process.env.GS_SUPAURL ?? ""
-const supabaseRdKey = process.env.GS_SUPAPUBLIC ?? ""
-const supabaseUpKey = process.env.GS_SUPAUPDATE ?? ""
 
 export default class cqs {
+   constructor(env) {
+      this.env = env
+   }
 
    async refreshQuotes(options = { force: false, database: false }, topic = "general") {
       const { force, database } = options
-      const quotesFile = DATA_DIR + `/${topic}.quotes.json`
-      const dataFile = DATA_DIR + `/${topic}.data.json`
+      const quotesFile = this.env.dataDir + `/${topic}.quotes.json`
+      const dataFile = this.env.dataDir + `/${topic}.data.json`
 
       try {
          if (force || database || !fs.existsSync(quotesFile)) {
@@ -26,11 +23,11 @@ export default class cqs {
             const fileStats = await fs.stat(quotesFile)
 
             // Default TTL is 1 day (86400 seconds)
-            const ttl = parseInt(process.env.GS_QUOTES_CACHE_TTL ?? '86400', 10)
+            const ttl = parseInt(this.env.cacheQuotesTTL, 10)
             const fileAgeDays = Math.floor((Date.now() - fileStats.mtime.getTime()) / (1000 * ttl))
 
             // If the file is older than 30 days, fetch new quotes
-            const maxdays = parseInt(process.env.GS_QUOTES_MAX_DAYS ?? '30', 10)
+            const maxdays = parseInt(this.env.cacheQuotesMaxDays, 10)
             logger.info(`quotes file age is ${fileAgeDays} days`)
 
             if (fileAgeDays > maxdays) {
@@ -39,7 +36,7 @@ export default class cqs {
          }
 
          const json = fs.readJSONSync(quotesFile)
-         const supabase = createClient(supabaseUrl, supabaseUpKey)
+         const supabase = createClient(this.env.supabaseProjectUrl, this.env.supabaseServiceKey)
          try {
             if (database == false) {
                const model = json.model
@@ -70,7 +67,7 @@ export default class cqs {
 
    async fetchNewQuotes(options, topic) {
 
-      const topics = fs.readJSONSync(TOPICS_FILE)
+      const topics = fs.readJSONSync(this.env.dataDir + "/topics.json")
       const t2refresh = _.find(topics, (t) => { if (t.topic == topic) { return t } })
 
       if (!t2refresh) {
@@ -80,7 +77,7 @@ export default class cqs {
 
       const { database } = options
       if (options.database) {
-         const supabase = createClient(supabaseUrl, supabaseRdKey)
+         const supabase = createClient(this.env.supabaseProjectUrl, this.env.supabaseAnonKey)
 
          const { data, error } = await supabase
             .from('topics').select('*').eq('topic', topic)
@@ -90,16 +87,15 @@ export default class cqs {
             throw error
          }
 
-         const quotesFile = DATA_DIR + `/${topic}.quotes.json`
+         const quotesFile = this.env.dataDir + `/${topic}.quotes.json`
          fs.writeJSONSync(quotesFile, data[0], { spaces: 3 })
          logger.info(`Quotes file rebuilt from database for topic ${topic}`)
          return;
-
       }
 
 
 
-      const model = t2refresh.model ?? "gpt-4o-mini"
+      const model = t2refresh.model ?? this.env.openaiModel
       logger.info(`fetching new quotes using model ${model}`)
 
       const prompt = t2refresh.promptliteral
@@ -108,9 +104,9 @@ export default class cqs {
 
       logger.info(`using prompt ${prompt}`)
 
-      const quotesFile = DATA_DIR + `/${topic}.quotes.json`
+      const quotesFile = this.env.dataDir + `/${topic}.quotes.json`
 
-      const openai = new OpenAI({ apiKey: process.env.GS_OPENAI_API_KEY })
+      const openai = new OpenAI({ apiKey: this.env.openaiApiKey })
 
       const response = await openai.chat.completions.create({ model: model, messages: [{ role: "user", content: [{ type: "text", text: prompt, }] }], max_tokens: 2000 })
       response.cid = t2refresh.id

@@ -1,21 +1,14 @@
 #!/usr/bin/env node --no-warnings
 import prog from "caporal"
-import logger from "./src/logger.js"
-import fs from "fs-extra"
 import cqs from "./src/cqs.js"
+import logger from "./src/logger.js"
 import qqs from "./src/qqs.js"
-import env from "./src/env.js"
+import senv from "./src/senv.js"
 import { server } from "./src/server.js"
-import packageJson from "./package.json" assert { type: "json" }
-const { name, version, description } = packageJson
 
 try {
-   try {
-      fs.readJSONSync("build.num")
-   } catch (err) {
-      fs.writeJSONSync("build.num", 0)
-   }
-   let build = fs.readJSONSync("build.num")
+   const env = new senv()
+   const { name, version, description, build } = env
 
    // =======================================================================
    // cli processing
@@ -28,8 +21,8 @@ try {
       // =====================================================================
       .command("env", "display environment")
       .action(async (args, options) => {
-         let ienv = new env(args, options)
-         await ienv.display()
+         env.setArgsOptions(args, options)
+         await env.display()
       })
 
       // =====================================================================
@@ -41,8 +34,15 @@ try {
       .option("-d, --database", "use database", false)
       .action(async (args, options) => {
          try {
-            const qq = new qqs()
+            env.setArgsOptions(args, options)
+            const qq = new qqs(env)
             const topics = await qq.getTopics(!options.topics)
+            if (topics.status != 200) {
+               logger.error(`https://supabase.com/dashboard/project/${env.supabaseProjectId}`)
+               console.log(`error retrieving topic list`)
+               console.log(`\n`)
+               return
+            }
 
             if (options.list || options.topics) {
                console.log(`\ntopics:`)
@@ -61,7 +61,7 @@ try {
                }
             }
 
-            let cq = new cqs()
+            let cq = new cqs(env) 
             logger.info(`refreshing quotes ${options.force ? "forced" : ""}`)
             cq.refreshQuotes(options, args.topic)
             logger.info(`refreshing quotes completes`)
@@ -74,7 +74,8 @@ try {
       .command("server", "start the service")
       .action(async (args, options) => {
          logger.info("starting server")
-         server()
+         env.setArgsOptions(args, options)
+         server(env)
       })
 
    logger.info(`running ${name} cli v${version} (${build})`)
