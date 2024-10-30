@@ -91,7 +91,7 @@ export default class qqs {
 
    async getQuotes(topic = "general") {
       try {
-         const data = await fs.readJSONSync(this.ienv.dataDir + `/${topic}.data.json`)
+         const data = await fs.readJSONSync(this.env.dataDir + `/${topic}.data.json`)
          if (data.length == 0) {
             return { status: 404, data: "No quotes found" }
          } else {
