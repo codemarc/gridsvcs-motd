@@ -36,6 +36,12 @@ The principle here is that you can ask a question about the state of the system 
 
 * [OpenAI Platform](https://platform.openai.com/), [API keys](https://platform.openai.com/api-keys) (for this service use the project gridlinks and the key named motd)
 
+* [OrbStack](https://docs.orbstack.dev/) (alternative to Docker Desktop)
+https://cli.gridsvcs-motd.orb.local is localhost:3000  
+so try https://cli.gridsvcs-motd.orb.local/v1/motd/api-docs  
+When OrbStack is running, you can visit [orb.local](http://orb.local/) in your browser for links to all running containers.
+
+
 
 ## build and run
 
@@ -214,3 +220,68 @@ What about no options?
 
 if no options are specified the refresh command will refresh the topics list (if neccessary) and the general quotes cache.
 
+### Run the service
+
+```bash
+$ ./start server
+
+grid start motd v0.0.10
+
+starting in development mode...
+loading .env.development environment variables...
+(node:67777) ExperimentalWarning: Importing JSON modules is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+wed 2024-10-30 02:04:08 pm [info]: running motd cli v0.0.10 (241030314)
+wed 2024-10-30 02:04:08 pm [info]: starting server
+wed 2024-10-30 02:04:08 pm [info]: =============================================================================
+wed 2024-10-30 02:04:08 pm [info]: NODE_ENV....................[development]
+wed 2024-10-30 02:04:08 pm [info]: GS_DATA.....................[data/dev]
+wed 2024-10-30 02:04:08 pm [info]: GS_LOGS.....................[logs/dev]
+wed 2024-10-30 02:04:08 pm [info]: GS_PORT.....................[3000]
+wed 2024-10-30 02:04:08 pm [info]: GS_OPENAI_API_KEY...........[sk-p••••••••••••••••••••••••••••••••NfAA]
+wed 2024-10-30 02:04:08 pm [info]: GS_OPENAI_MODEL.............[gpt-3.5-turbo]
+wed 2024-10-30 02:04:08 pm [info]: GS_SUPAURL..................[https://bcxmxwbowkwaajudjerb.supabase.co]
+wed 2024-10-30 02:04:08 pm [info]: GA_SUPANON..................[eyJh••••••••••••••••••••••••••••••••NYQs]
+wed 2024-10-30 02:04:08 pm [info]: GA_SUPSVC...................[eyJh••••••••••••••••••••••••••••••••P4XU]
+wed 2024-10-30 02:04:08 pm [info]: GS_TOPICS_CACHE_TTL.........[7200]
+wed 2024-10-30 02:04:08 pm [info]: GS_QUOTES_CACHE_TTL.........[86400]
+wed 2024-10-30 02:04:08 pm [info]: GS_QUOTES_MAX_DAYS..........[30]
+wed 2024-10-30 02:04:08 pm [info]: =============================================================================
+wed 2024-10-30 02:04:08 pm [info]: data directory resolves to /Users/marc/cmc/grid/gridsvcs-motd/data/dev
+wed 2024-10-30 02:04:08 pm [info]: server is running on http://localhost:3000
+wed 2024-10-30 02:04:08 pm [info]: try http://localhost:3000/v1/motd/api-docs
+wed 2024-10-30 02:04:08 pm [info]: try http://localhost:3000/v1/motd/status
+wed 2024-10-30 02:04:08 pm [info]: try http://localhost:3000/v1/motd/quotes
+wed 2024-10-30 02:04:08 pm [info]: try http://localhost:3000/v1/motd/topics
+wed 2024-10-30 02:04:08 pm [info]: press CTRL+C to stop
+```
+
+### Routes
+
+The following routes are available in the service:
+
+- `GET /v1/motd/api-docs`: Swagger documentation for the service.
+- `GET /v1/motd/status`: Check the status of the service.
+- `GET /v1/motd/quotes`: Retrieve the list of quotes.
+- `GET /v1/motd/topics`: Retrieve the list of topics.
+
+From your browser you can find the swaggerdoc -- at http://localhost:3000/v1/motd/api-docs. 
+From here you can test the API directly or 
+use the [openapi source definition for motd](http://localhost:3000/v1/motd/openapi.json) also known 
+as swaggerdov to generate a client or 
+import definition to Postman or Insomnia.
+
+#### docker:build
+```bash
+$ yarn docker:build
+```
+
+#### docker:prod build
+```bash
+$ yarn docker:prod
+
+$ yarn docker:prod server
+
+$ https://cli.gridsvcs-motd.orb.local/v1/motd/
+
+```

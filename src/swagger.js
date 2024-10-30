@@ -28,6 +28,10 @@ const options = {
             description: "Development server",
          },
          {
+            url: "http://cli.gridsvcs-motd.orb.local/",
+            description: "Development server in orbstack",
+         },
+         {
             url: "https://codemarc.net/api/",
             description: "Production server",
          },

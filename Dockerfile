@@ -11,4 +11,3 @@ RUN yarn global add node-gyp && yarn
 
 USER node
 CMD "./start.sh"
-
