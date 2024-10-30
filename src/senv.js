@@ -26,7 +26,7 @@ export default class senv {
       this.port = process.env.GS_PORT ?? "3000"
 
       // openai
-      this.openaiModel = process.env.GS_OPENAI_MODEL ?? "gpt-3.5-turbo"
+      this.openaiModel = process.env.GS_OPENAI_MODEL ?? "gpt-4o-mini"
       this.openaiApiKey = process.env.GS_OPENAI_API_KEY ?? ""
 
       // supabase
