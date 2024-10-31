@@ -9,5 +9,4 @@ COPY ./ .
 RUN chown -R node /gridsvcs/motd
 RUN yarn global add node-gyp && yarn
 
-USER node
 CMD "./start.sh"
