@@ -348,7 +348,7 @@ export async function server(env) {
       process.exit(0)
    })
 
-   swaggerSetup(app)
+   swaggerSetup(app, env)
 
    await env.display()
 

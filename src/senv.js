@@ -1,7 +1,7 @@
 import chalk from "chalk"
 import fs from "fs-extra"
 import path from "path"
-import packageJson from "../package.json" assert { type: "json" }
+import packageJson from "../package.json" with { type: "json" }
 import logger from "./logger.js"
 
 export default class senv {
