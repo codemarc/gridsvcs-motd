@@ -1,16 +1,5 @@
 [
   {
-    "id": 2,
-    "topic": "sopranos",
-    "prompt": "by characters from the sopranos",
-    "promptliteral": false,
-    "model": "gpt-4o-mini",
-    "message": null,
-    "usage": null,
-    "modified": "2024-10-20T19:32:50.188128+00:00",
-    "dbu": "postgres"
-  },
-  {
     "id": 3,
     "topic": "got",
     "prompt": "by characters from game of thrones or from house of the dragon",
@@ -480,6 +469,232 @@
     "dbu": "postgres"
   },
   {
+    "id": 2,
+    "topic": "sopranos",
+    "prompt": "by characters from the sopranos",
+    "promptliteral": false,
+    "model": "gpt-4o-mini-2024-07-18",
+    "message": [
+      {
+        "author": "Tony Soprano",
+        "message": "You want the truth? You can’t handle the truth!"
+      },
+      {
+        "author": "Christopher Moltisanti",
+        "message": "In this world, you either take or you get taken."
+      },
+      {
+        "author": "Paulie 'Walnuts' Gualtieri",
+        "message": "Whatever you do, don’t be a rat."
+      },
+      {
+        "author": "Carmela Soprano",
+        "message": "Sometimes it’s good to be a little selfish."
+      },
+      {
+        "author": "Tony Soprano",
+        "message": "Family is everything, even when it’s a pain."
+      },
+      {
+        "author": "Silvio Dante",
+        "message": "You gotta always be working the angles."
+      },
+      {
+        "author": "Hesh Rabkin",
+        "message": "Don’t let anybody tell you how to run your life."
+      },
+      {
+        "author": "Tony Soprano",
+        "message": "A man’s gotta do what a man’s gotta do."
+      },
+      {
+        "author": "Dr. Melfi",
+        "message": "Life’s too short for regrets."
+      },
+      {
+        "author": "Anthony Jr.",
+        "message": "Sometimes you have to take a step back to go forward."
+      },
+      {
+        "author": "Carmela Soprano",
+        "message": "You never know how strong you are until being strong is your only choice."
+      },
+      {
+        "author": "Tony Soprano",
+        "message": "Fear makes you weak."
+      },
+      {
+        "author": "Christopher Moltisanti",
+        "message": "The reward is in the risk."
+      },
+      {
+        "author": "Carmela Soprano",
+        "message": "Every day’s a new opportunity."
+      },
+      {
+        "author": "Paulie 'Walnuts' Gualtieri",
+        "message": "You can’t enjoy the sweet without the sour."
+      },
+      {
+        "author": "Tony Soprano",
+        "message": "Sometimes you gotta do something bad for a good reason."
+      },
+      {
+        "author": "Silvio Dante",
+        "message": "A loyalty to the family comes first."
+      },
+      {
+        "author": "Tony Soprano",
+        "message": "Stick to your principles, no matter the cost."
+      },
+      {
+        "author": "Christopher Moltisanti",
+        "message": "You can’t turn your back on your family."
+      },
+      {
+        "author": "Paulie 'Walnuts' Gualtieri",
+        "message": "It’s all about the hustle."
+      },
+      {
+        "author": "Hesh Rabkin",
+        "message": "Success is a journey, not a destination."
+      },
+      {
+        "author": "Dr. Melfi",
+        "message": "Life’s a game, play it wisely."
+      },
+      {
+        "author": "Tony Soprano",
+        "message": "Don’t take sh*t from anyone."
+      },
+      {
+        "author": "Michael Corleone",
+        "message": "Keep your enemies close; keep your friends closer."
+      },
+      {
+        "author": "Carmela Soprano",
+        "message": "Every choice has its consequences."
+      },
+      {
+        "author": "Silvio Dante",
+        "message": "Improvise, adapt, overcome."
+      },
+      {
+        "author": "Tony Soprano",
+        "message": "Trust is fragile; don’t break it."
+      },
+      {
+        "author": "Christopher Moltisanti",
+        "message": "Change is the only constant."
+      },
+      {
+        "author": "Paulie 'Walnuts' Gualtieri",
+        "message": "Sometimes you gotta roll the dice."
+      },
+      {
+        "author": "Tony Soprano",
+        "message": "You can’t be afraid of the darkness."
+      },
+      {
+        "author": "Carmela Soprano",
+        "message": "Never forget where you came from."
+      },
+      {
+        "author": "Silvio Dante",
+        "message": "Keep your eyes on the prize."
+      },
+      {
+        "author": "Hesh Rabkin",
+        "message": "You’re never too old to learn something new."
+      },
+      {
+        "author": "Paulie 'Walnuts' Gualtieri",
+        "message": "Every dog has its day."
+      },
+      {
+        "author": "Tony Soprano",
+        "message": "Loyalty is everything in our world."
+      },
+      {
+        "author": "Christopher Moltisanti",
+        "message": "You still think of me as a kid?"
+      },
+      {
+        "author": "Dr. Melfi",
+        "message": "You always have a choice."
+      },
+      {
+        "author": "Tony Soprano",
+        "message": "There’s no easy way out."
+      },
+      {
+        "author": "Carmela Soprano",
+        "message": "Don’t confuse between being kind and being weak."
+      },
+      {
+        "author": "Silvio Dante",
+        "message": "Learn to roll with the punches."
+      },
+      {
+        "author": "Paulie 'Walnuts' Gualtieri",
+        "message": "Don’t let anyone dictate your path."
+      },
+      {
+        "author": "Hesh Rabkin",
+        "message": "A wise man knows he knows nothing."
+      },
+      {
+        "author": "Tony Soprano",
+        "message": "You gotta be tough to survive."
+      },
+      {
+        "author": "Dr. Melfi",
+        "message": "You can’t change the past, but you can shape your future."
+      },
+      {
+        "author": "Christopher Moltisanti",
+        "message": "Life is full of surprises; embrace them."
+      },
+      {
+        "author": "Carmela Soprano",
+        "message": "Know your worth and don’t settle."
+      },
+      {
+        "author": "Silvio Dante",
+        "message": "You’ll never get anywhere playing it safe."
+      },
+      {
+        "author": "Tony Soprano",
+        "message": "Face your fears head-on."
+      },
+      {
+        "author": "Paulie 'Walnuts' Gualtieri",
+        "message": "What doesn’t kill you makes you stronger."
+      },
+      {
+        "author": "Hesh Rabkin",
+        "message": "There’s always a silver lining."
+      },
+      {
+        "author": "Carmela Soprano",
+        "message": "Stand your ground and don’t apologize for it."
+      }
+    ],
+    "usage": {
+      "total_tokens": 1313,
+      "prompt_tokens": 40,
+      "completion_tokens": 1273,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "modified": "2024-10-20T19:32:50.188128+00:00",
+    "dbu": "postgres"
+  },
+  {
     "id": 1,
     "topic": "general",
     "prompt": "create a list of 50 \"message of the day\" quotes formatted as an array of json objects containing the fields message and author",
@@ -491,214 +706,206 @@
         "message": "The only way to do great work is to love what you do."
       },
       {
-        "author": "Sam Levenson",
-        "message": "Do not watch the clock. Do what it does. Keep going."
-      },
-      {
-        "author": "Henry David Thoreau",
-        "message": "Success usually comes to those who are too busy to be looking for it."
-      },
-      {
-        "author": "Chris Grosser",
-        "message": "Opportunities don't happen. You create them."
-      },
-      {
-        "author": "John D. Rockefeller",
-        "message": "Don't be afraid to give up the good to go for the great."
-      },
-      {
-        "author": "Thomas Jefferson",
-        "message": "I find that the harder I work, the more luck I seem to have."
-      },
-      {
-        "author": "Bo Bennett",
-        "message": "Success is not in what you have, but who you are."
-      },
-      {
-        "author": "Jawaharlal Nehru",
-        "message": "Success often comes to those who dare to act."
-      },
-      {
-        "author": "Steve Jobs",
-        "message": "Your time is limited, so don't waste it living someone else's life."
-      },
-      {
-        "author": "Unknown",
-        "message": "Success is not just making money. It's making a difference."
-      },
-      {
-        "author": "Frank Sinatra",
-        "message": "The best revenge is massive success."
-      },
-      {
-        "author": "W.P. Kinsella",
-        "message": "Success is getting what you want. Happiness is wanting what you get."
-      },
-      {
-        "author": "Walt Disney",
-        "message": "The way to get started is to quit talking and begin doing."
-      },
-      {
-        "author": "Amit Abraham",
-        "message": "Innovate, don't imitate."
-      },
-      {
-        "author": "Theodore Roosevelt",
-        "message": "Believe you can and you're halfway there."
-      },
-      {
-        "author": "Conrad Hilton",
-        "message": "Success seems to be connected with action. Successful people keep moving."
-      },
-      {
-        "author": "John D. Rockefeller Jr.",
-        "message": "The secret of success is to do the common thing uncommonly well."
+        "author": "John Lennon",
+        "message": "Life is what happens when you're busy making other plans."
       },
       {
         "author": "Dalai Lama",
         "message": "The purpose of our lives is to be happy."
       },
       {
-        "author": "Albert Schweitzer",
-        "message": "Success is not the key to happiness. Happiness is the key to success."
+        "author": "Stephen King",
+        "message": "Get busy living or get busy dying."
       },
       {
-        "author": "William James",
-        "message": "It is our attitude at the beginning of a difficult task which, more than anything else, will affect its successful outcome."
-      },
-      {
-        "author": "Winston Churchill",
-        "message": "Success is walking from failure to failure with no loss of enthusiasm."
-      },
-      {
-        "author": "Johann Wolfgang von Goethe",
-        "message": "Knowing is not enough; we must apply. Wishing is not enough; we must do."
-      },
-      {
-        "author": "Will Rogers",
-        "message": "Don't let yesterday take up too much of today."
-      },
-      {
-        "author": "Ayn Rand",
-        "message": "The question isn't who is going to let me; it's who is going to stop me."
-      },
-      {
-        "author": "John Lennon",
-        "message": "Life is what happens when you're busy making other plans."
-      },
-      {
-        "author": "George S. Patton",
-        "message": "Success is how high you bounce when you hit bottom."
-      },
-      {
-        "author": "Franklin D. Roosevelt",
-        "message": "The only limit to our realization of tomorrow will be our doubts of today."
-      },
-      {
-        "author": "Shiv Khera",
-        "message": "Your positive action combined with positive thinking results in success."
-      },
-      {
-        "author": "William James",
-        "message": "Act as if what you do makes a difference. It does."
-      },
-      {
-        "author": "Michelle Obama",
-        "message": "Success is not how much money you have, but how much difference you make."
-      },
-      {
-        "author": "Wayne Gretzky",
-        "message": "You miss 100% of the shots you don't take."
-      },
-      {
-        "author": "Abraham Lincoln",
-        "message": "Be sure you put your feet in the right place, then stand firm."
-      },
-      {
-        "author": "William James",
-        "message": "Be not afraid of life. Believe that life is worth living, and your belief will help create the fact."
-      },
-      {
-        "author": "C.S. Lewis",
-        "message": "Hardships often prepare ordinary people for an extraordinary destiny."
-      },
-      {
-        "author": "Vince Lombardi",
-        "message": "The difference between a successful person and others is not a lack of strength, not a lack of knowledge, but rather a lack in will."
-      },
-      {
-        "author": "Peter Drucker",
-        "message": "The best way to predict the future is to create it."
-      },
-      {
-        "author": "Jordan Belfort",
-        "message": "The only thing standing between you and your goal is the story you keep telling yourself as to why you can't achieve it."
+        "author": "Brian Tracy",
+        "message": "You have within you right now, everything you need to deal with whatever the world can throw at you."
       },
       {
         "author": "Theodore Roosevelt",
-        "message": "Do what you can, with what you have, where you are."
+        "message": "Believe you can and you're halfway there."
       },
       {
-        "author": "Amelia Earhart",
-        "message": "The most difficult thing is the decision to act, the rest is merely tenacity."
+        "author": "Tony Robbins",
+        "message": "The only impossible journey is the one you never begin."
       },
       {
-        "author": "Walt Whitman",
-        "message": "Keep your face always toward the sunshine—and shadows will fall behind you."
+        "author": "Sarah Louise Delany",
+        "message": "Life is short, and it's up to you to make it sweet."
+      },
+      {
+        "author": "Alan Kay",
+        "message": "The best way to predict the future is to invent it."
+      },
+      {
+        "author": "Steve Jobs",
+        "message": "Your time is limited, don't waste it living someone else's life."
+      },
+      {
+        "author": "Roy T. Bennett",
+        "message": "Success is not how high you have climbed, but how you make a positive difference to the world."
+      },
+      {
+        "author": "Frank Sinatra",
+        "message": "The best revenge is massive success."
+      },
+      {
+        "author": "Lewis Carroll",
+        "message": "In the end, we only regret the chances we didn’t take."
+      },
+      {
+        "author": "Henry David Thoreau",
+        "message": "Go confidently in the direction of your dreams! Live the life you’ve imagined."
+      },
+      {
+        "author": "Amy Poehler",
+        "message": "Change the world by being yourself."
       },
       {
         "author": "Zig Ziglar",
         "message": "What you get by achieving your goals is not as important as what you become by achieving your goals."
       },
       {
+        "author": "Dalai Lama",
+        "message": "Happiness is not something ready-made. It comes from your own actions."
+      },
+      {
+        "author": "James Dean",
+        "message": "Dream as if you’ll live forever, live as if you’ll die today."
+      },
+      {
+        "author": "Walt Disney",
+        "message": "If you can dream it, you can do it."
+      },
+      {
+        "author": "Maya Angelou",
+        "message": "Life is not measured by the number of breaths we take, but by the moments that take our breath away."
+      },
+      {
+        "author": "George Addair",
+        "message": "Everything you’ve ever wanted is on the other side of fear."
+      },
+      {
+        "author": "Franklin D. Roosevelt",
+        "message": "The only limit to our realization of tomorrow is our doubts of today."
+      },
+      {
+        "author": "William Butler Yeats",
+        "message": "Do not wait to strike till the iron is hot; but make it hot by striking."
+      },
+      {
+        "author": "Theodore Roosevelt",
+        "message": "Do what you can, with what you have, where you are."
+      },
+      {
         "author": "Pablo Picasso",
         "message": "Action is the foundational key to all success."
       },
       {
-        "author": "Vidal Sassoon",
-        "message": "The only place where success comes before work is in the dictionary."
+        "author": "Henry David Thoreau",
+        "message": "Success usually comes to those who are too busy to be looking for it."
       },
       {
-        "author": "Nelson Mandela",
-        "message": "The greatest glory in living lies not in never falling, but in rising every time we fall."
+        "author": "Anonymous",
+        "message": "The only limit to our achievement is our imagination."
+      },
+      {
+        "author": "Arthur Ashe",
+        "message": "Start where you are. Use what you have. Do what you can."
+      },
+      {
+        "author": "Albert Schweitzer",
+        "message": "Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful."
+      },
+      {
+        "author": "Walt Whitman",
+        "message": "Keep your face always toward the sunshine—and shadows will fall behind you."
+      },
+      {
+        "author": "Maya Angelou",
+        "message": "We may encounter many defeats but we must not be defeated."
+      },
+      {
+        "author": "Chris Grosser",
+        "message": "Opportunities don't happen. You create them."
+      },
+      {
+        "author": "Bob Marley",
+        "message": "Love the life you live. Live the life you love."
+      },
+      {
+        "author": "Florence Nightingale",
+        "message": "I attribute my success to this: I never gave or took any excuse."
+      },
+      {
+        "author": "Bo Bennett",
+        "message": "Success is not in what you have, but who you are."
+      },
+      {
+        "author": "Charles R. Swindoll",
+        "message": "Life is 10% what happens to us and 90% how we react to it."
+      },
+      {
+        "author": "Thomas Jefferson",
+        "message": "If you want something you've never had, you must be willing to do something you've never done."
+      },
+      {
+        "author": "Wayne Gretzky",
+        "message": "You miss 100% of the shots you don’t take."
       },
       {
         "author": "Sam Levenson",
-        "message": "Don’t watch the clock; do what it does. Keep going."
+        "message": "Don't watch the clock; do what it does. Keep going."
       },
       {
-        "author": "Muhammad Ali",
-        "message": "Don't count the days, make the days count."
+        "author": "Mark Twain",
+        "message": "The secret of getting ahead is getting started."
       },
       {
-        "author": "Steve Jobs",
-        "message": "If you look really closely, most overnight successes took a long time."
+        "author": "Vince Lombardi",
+        "message": "It's not whether you get knocked down, it's whether you get up."
       },
       {
         "author": "Roy T. Bennett",
         "message": "Don't be pushed around by the fears in your mind. Be led by the dreams in your heart."
       },
       {
-        "author": "Oscar Wilde",
-        "message": "Be yourself; everyone else is already taken."
+        "author": "Pablo Picasso",
+        "message": "Everything you can imagine is real."
       },
       {
-        "author": "Farrah Gray",
-        "message": "Build your own dreams, or someone else will hire you to build theirs."
+        "author": "George Bernard Shaw",
+        "message": "Life isn’t about finding yourself. Life is about creating yourself."
       },
       {
-        "author": "George Addair",
-        "message": "Everything you've ever wanted is on the other side of fear."
+        "author": "Walt Disney",
+        "message": "The way to get started is to quit talking and begin doing."
       },
       {
-        "author": "Aisha Tyler",
-        "message": "Success is not the absence of failure; it's the persistence through failure."
+        "author": "Conrad Hilton",
+        "message": "Success seems to be connected with action. Successful people keep moving."
+      },
+      {
+        "author": "Confucius",
+        "message": "Our greatest glory is not in never falling, but in rising every time we fall."
+      },
+      {
+        "author": "Dan Reeves",
+        "message": "Difficulties in life are intended to make us better, not bitter."
+      },
+      {
+        "author": "Mahatma Gandhi",
+        "message": "You must be the change you wish to see in the world."
+      },
+      {
+        "author": "Ralph Waldo Emerson",
+        "message": "The only person you are destined to become is the person you decide to be."
       }
     ],
     "usage": {
-      "total_tokens": 1512,
+      "total_tokens": 1439,
       "prompt_tokens": 33,
-      "completion_tokens": 1479,
+      "completion_tokens": 1406,
       "prompt_tokens_details": {
         "cached_tokens": 0
       },
