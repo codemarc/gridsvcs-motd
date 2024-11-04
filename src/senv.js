@@ -21,8 +21,8 @@ export default class senv {
       this.description = packageJson.description
 
       // service base settings
-      this.data = process.env.GS_DATA ?? "data"
-      this.logs = process.env.GS_LOGS ?? "logs"
+      this.data = process.env.GS_DATA ?? "data/dev/cache"
+      this.logs = process.env.GS_LOGS ?? "data/dev/logs"
       this.port = process.env.GS_PORT ?? "3000"
 
       // openai

@@ -115,7 +115,7 @@ $ ./start -p
 grid start motd v0.0.10
 
 starting in production mode...
-loading .env.production environment variables...
+loading .env.prod environment variables...
 wed 2024-10-30 10:44:20 am [info]: running motd cli v0.0.10 (241030314)
 wed 2024-10-30 10:44:20 am [info]: no command issued
 
@@ -162,8 +162,8 @@ GS_SUPASVC=<supabase service token>
 GS_OPENAI_API_KEY=<motd openai api-key>
 ```
 
-The start script will load the environment variables from the .env.development or the 
-.env.production file depending on mode. If not file is available it will use the default environment. Running the env command will display the environment variables. .env.development is used by defined in the illustration below
+The start script will load the environment variables from the .env.dev or the 
+.env.prod file depending on mode. If not file is available it will use the default environment. Running the env command will display the environment variables. .env.dev is used by defined in the illustration below
 
 ```log
 $ ./start env
@@ -171,7 +171,7 @@ grid start motd v0.0.10
 
 
 starting in development mode...
-loading .env.development environment variables...
+loading .env.dev environment variables...
 (node:51861) ExperimentalWarning: Importing JSON modules is an experimental feature and might change at any time
 (Use `node --trace-warnings ...` to show where the warning was created)
 wed 2024-10-30 10:59:24 am [info]: running motd cli v0.0.10 (241030314)
@@ -228,7 +228,7 @@ $ ./start server
 grid start motd v0.0.10
 
 starting in development mode...
-loading .env.development environment variables...
+loading .env.dev environment variables...
 (node:67777) ExperimentalWarning: Importing JSON modules is an experimental feature and might change at any time
 (Use `node --trace-warnings ...` to show where the warning was created)
 wed 2024-10-30 02:04:08 pm [info]: running motd cli v0.0.10 (241030314)

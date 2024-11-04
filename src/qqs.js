@@ -1,7 +1,7 @@
 import { createClient } from "@supabase/supabase-js"
 import fs from "fs-extra"
-import logger from "./logger.js";
 import path from "path"
+import logger from "./logger.js"
 
 // Query Service
 export default class qqs {
@@ -109,7 +109,14 @@ export default class qqs {
    async getStatus() {
       try {
          const supabase = createClient(this.env.supabaseProjectUrl, this.env.supabaseAnonKey)
-         const { data, error } = await supabase.from('topics').select('topic,model,usage')
+         const { data, error } = await supabase.from('topics').select('topic,model,usage,modified')
+         for (let i = 0; i < data.length; i++) {
+            data[i].tokens = 0
+            if (data[i].usage) {
+               data[i].tokens = data[i].usage.total_tokens
+            }
+            delete data[i].usage
+         }
 
          let rc = {
             version: this.env.version,
