@@ -79,7 +79,9 @@ try {
       })
 
    logger.info(`running ${name} cli v${version} (${build})`)
-   if (process.argv.length < 3) logger.info("no command issued")
+   if (process.argv.length === 2 && process.argv[1].includes("motd.js")) {
+      process.argv.push("server")
+   }
 
    prog.parse(process.argv)
 } catch (err) {

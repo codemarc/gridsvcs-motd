@@ -13,12 +13,13 @@
       "motd": "./motd.js"
    },
    "scripts": {
-      "dev": "node --watch --env-file=.env.development ./motd.js server",
-      "server": "node --no-warnings --env-file=.env.production ./motd.js server",
-      "motd": "node --no-warnings --env-file=.env.production ./motd.js ",
+      "dev": "node --watch --env-file=.env.dev ./motd.js server",
+      "server": "node --no-warnings --env-file=.env.prod ./motd.js server",
+      "motd:dev": "node --no-warnings --env-file=.env.dev ./motd.js ",
+      "motd:prod": "node --no-warnings --env-file=.env.prod ./motd.js ",
       "docker:build": "docker compose build && docker images \"ghcr.io/codemarc/gridsvcs/**\"",
-      "docker:dev": "docker compose --env-file=.env.development run cli",
-      "docker:prod": "docker compose -f prod.yml run cli motd",
+      "docker:dev": "docker compose -f compose.dev run cli ./start ",
+      "docker:prod": "docker compose -f compose.prod run cli ./start ",
       "ver:show": "cat package.json | jq .version",
       "ver:update": "yarn version --patch",
       "build:show": "cat build.num && buildnumgen $(cat build.num)",

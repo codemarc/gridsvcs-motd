@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>gridsvcs - motd</title>
+  <link rel="icon" type="image/png" href="logo.png" />
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      line-height: 1.4;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+
+    header {
+      background: #2c3e50;
+      color: white;
+      padding: 1rem 0;
+      text-align: center;
+    }
+
+    header img {
+      max-width: 50px;
+      height: auto;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .feature-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+
+    a,
+    a:visited {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <h1><a href="https://codemarc.net"><img src="logo128.png" alt="CMC"></a>GridSvcs - MOTD </h1>
+      <p>Message of the Day service for Gridlinks</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="features">
+      <div class="feature-card">
+        <h2>api</h2>
+        <table>
+          <tr>
+            <td>topics</td>
+            <td><a href="/v1/motd/topics?format=html">html</a></td>
+            <td><a href="/v1/motd/topics?format=text">text</a></td>
+            <td><a href="/v1/motd/topics?format=json">json</a></td>
+          </tr>
+          <tr>
+            <td>quotes</td>
+            <td><a href="/v1/motd/quotes?format=html">html</a></td>
+            <td><a href="/v1/motd/quotes?format=text">text</a></td>
+            <td><a href="/v1/motd/quotes?format=json">json</a></td>
+
+          </tr>
+        </table>
+      </div>
+      <div class="feature-card">
+        <h2>doc</h2>
+        <p><a href="/v1/motd/api-docs/">motd swaggerdoc</a></p>
+        <p><a href="https://codemarc.net/doc/gridsvcs/">gridsvcs doc site</a></p>
+      </div>
+      <div class="feature-card">
+        <h2>status</h2>
+        <p>
+          <a href="https://status.supabase.com/" target="_blank">supabase</a> &bull;
+          <a href="https://status.openai.com/" target="_blank">openai</a> &bull;
+          <a href="https://platform.openai.com/docs/models " target="_blank">models</a> &bull;
+          <a href="/v1/motd/status">motd</a>
+        </p>
+
+
+
+      </div>
+
+    </div>
+  </main>
+</body>
+
+</html>

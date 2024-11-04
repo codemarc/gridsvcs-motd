@@ -3,9 +3,16 @@ import bodyParser from "body-parser"
 import cors from "cors"
 import express from "express"
 import helmet from "helmet"
+import path from "path"
 import logger from "./logger.js"
 import qqs from "./qqs.js"
 import swaggerSetup from "./swagger.js"
+
+import { fileURLToPath } from 'url'
+import { dirname } from 'path'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename);
 
 const HTMLSTART = (title, body) => {
    return `<html lang="en">
@@ -30,6 +37,7 @@ export async function server(env) {
    app.use(bodyParser.json())
    app.use(cors())
    app.use(helmet())
+   app.use(express.static(path.join(__dirname, '../public')))
 
    // Instantiate the query service
    const qq = new qqs(env)
@@ -346,6 +354,11 @@ export async function server(env) {
       logger.info("GET /v1/motd/stop")
       res.status(200).send("stopped")
       process.exit(0)
+   })
+
+   // serve default content
+   app.get("/", async (req, res) => {
+      res.render('index')
    })
 
    swaggerSetup(app, env)
