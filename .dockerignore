@@ -1,3 +1,4 @@
+**/.DS_Store
 **/.dockerignore
 **/.git
 **/.gitignore
@@ -8,9 +9,11 @@
 **/Dockerfile*
 **/npm-debug.log
 **/node_modules
+./start
 README.md
+./smash
 logs/
+data/
+sql/
 .env
-.env.bin
-.env.local
-.env.local.bin
+.env.*

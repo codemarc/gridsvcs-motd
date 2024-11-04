@@ -39,10 +39,10 @@ else
   echo "starting in development mode..."
   if [ -f .env.dev ]; then
      echo "loading .env.dev environment variables..."
-     node --env-file=.env.dev ./motd.js "$@"
+     node --env-file=.env.dev ./motd.js $2 $3 $4 $5 $6 $7 $8 $9
   else
      echo "using default environment..."
-     NODE_ENV=development node ./motd.js "$@"
+     NODE_ENV=development node ./motd.js $2 $3 $4 $5 $6 $7 $8 $9
   fi
 fi
 
